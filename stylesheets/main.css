@@ -25,6 +25,7 @@ body {
 
 img {
   max-width: 100%;
+  max-height: 100%;
 }
 
 button {
@@ -146,7 +147,7 @@ h3 {
 }
 
 .creations-title {
-  font-size: 2em;
+  font-size: 2rem;
   text-align: center;
   margin-bottom: 1.8em;
 }
@@ -182,6 +183,7 @@ h3 {
   width: 100%;
   height: 100%;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  transition: all 0.2s ease-in-out;
 }
 
 .picture-text {
@@ -191,7 +193,7 @@ h3 {
   width: 140px;
   margin-top: 15%;
   margin-left: 5%;
-  transition: all 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .creations-button {
@@ -236,4 +238,184 @@ h3 {
   justify-content: center;
   gap: 1.5em;
   margin: 1.5em auto;
+}
+
+/************ DESKTOP VERSION ************/
+
+@media screen and (min-width: 960px) {
+  .nav-item,
+  .footer-item {
+    position: relative;
+  }
+
+  .nav-item::after,
+  .footer-item::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 0.2rem;
+    background-color: var(--white);
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+  }
+
+  .nav-item:hover::after,
+  .footer-item:hover::after {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+
+  /*---------- HEADER ----------*/
+  .hero {
+    background-image: url("../images/desktop/image-hero.jpg");
+    height: 70vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .navbar {
+    align-items: center;
+    height: 50px;
+  }
+
+  .nav-menu {
+    position: relative;
+    background: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: none;
+  }
+
+  .nav-menu .container {
+    width: 100%;
+  }
+
+  .nav-menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4%;
+  }
+
+  .nav-menu .nav-link {
+    text-transform: none;
+    font-family: var(--alata);
+    font-size: 1.3rem;
+  }
+
+  .nav-item {
+    margin-top: 8px;
+  }
+
+  .menu-header,
+  .menu-open {
+    display: none;
+  }
+
+  .hero-title {
+    color: var(--white);
+    font-size: 4rem;
+    border: 1px solid var(--white);
+    padding: 0.2em;
+    margin-top: 2.5em;
+    width: 550px;
+    height: auto;
+  }
+
+  .hero-title br {
+    display: none;
+  }
+
+  /*---------- INFO SECTION ----------*/
+  .info-section .container {
+    position: relative;
+    margin-bottom: 4.5em;
+  }
+
+  .info-box {
+    position: absolute;
+    background: var(--white);
+    width: 50%;
+    min-height: 380px;
+    padding: 5em 0 0 5em;
+    text-align: left;
+    right: 0;
+    bottom: 0;
+    top: 25%;
+  }
+
+  .info-title {
+    font-size: 2.5rem;
+  }
+
+  .info-text {
+    font-size: 1.05rem;
+  }
+
+  /*---------- CREATIONS SECTION ----------*/
+  .creations-section {
+    position: relative;
+  }
+
+  .creations-title {
+    text-align: left;
+    font-size: 2.2rem;
+  }
+
+  .creations-container {
+    grid-template-columns: repeat(4, 3fr);
+    margin-bottom: 10em;
+  }
+
+  .creations-button {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    margin: 0;
+    width: 12%;
+    height: 35px;
+  }
+
+  /*---------- FOOTER ----------*/
+
+  .footer {
+    text-align: left;
+    padding-bottom: 1em;
+  }
+
+  .footer .container {
+    position: relative;
+  }
+
+  .footer-menu {
+    display: flex;
+    gap: 1em;
+    margin-top: 0.4em;
+  }
+
+  .footer-item {
+    margin: 0;
+  }
+
+  .footer-link {
+    font-size: 1rem;
+  }
+
+  .social-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+
+  .rights-text {
+    position: absolute;
+    right: 0;
+    top: 50px;
+  }
 }
