@@ -245,12 +245,14 @@ h3 {
 
 @media screen and (min-width: 960px) {
   .nav-item,
-  .footer-item {
+  .footer-item,
+  .social-link {
     position: relative;
   }
 
   .nav-item::after,
-  .footer-item::after {
+  .footer-item::after,
+  .social-link::after {
     content: "";
     position: absolute;
     bottom: -15px;
@@ -264,14 +266,20 @@ h3 {
   }
 
   .nav-item:hover::after,
-  .footer-item:hover::after {
+  .footer-item:hover::after,
+  .social-link:hover::after {
     transform: translateX(-50%);
     opacity: 1;
   }
 
   /*---------- HEADER ----------*/
   .hero {
-    background-image: url("../images/desktop/image-hero.jpg");
+    background-image: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.402),
+        rgba(0, 0, 0, 0.333)
+      ),
+      url("../images/desktop/image-hero.jpg");
     height: 70vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -419,6 +427,10 @@ h3 {
     top: 0;
     right: 0;
     margin: 0;
+  }
+
+  .social-icon {
+    cursor: pointer;
   }
 
   .rights-text {
